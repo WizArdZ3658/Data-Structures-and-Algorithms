@@ -62,7 +62,14 @@ ll find_lca(ll seg_tree[],ll u, ll v)
 	return query(seg_tree,1,0,idx-1,start,end);
 }
 int main()
-{
+{	
+	/*This program calculates the lowest common ancestor of two given nodes in a tree.
+	I've used segment tree for answering queries, first step is euler tour which can be 
+	done using DFS and inserting the values into euler_tour[] array. Second step is
+	to create segment tree out of that euler_tour[] array and in this case each internal
+	node contains the value of the index of that node which is lowest in depth.
+	The complexity of preprocessing is O(n) and answering quesries is O(nlogn), so the
+	overall worst case time complexity becomes O(nlogn).*/
 	ll n, q, u, v;
 	cin >> n >> q;
 	for (int i = 0; i < n-1; ++i)
