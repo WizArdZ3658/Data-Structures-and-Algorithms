@@ -1,10 +1,9 @@
 #include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-int longest_path(vector<vector<int>> &adj)
+int longest_path(vector<vector<int> > &adj, int n)
 {
-	int n = adj.size();
-	int indegree[n] = {0};
-	int l_path[n] = {0};
+	vector<int> indegree(n, 0), l_path(n, 0);
 	for (int i = 0; i < n; ++i)
 	{
 		for (int j = 0; j < adj[i].size(); ++j)
@@ -50,7 +49,7 @@ int main()
 	cout << "Enter number of vertices\n";
 	int n;
 	cin >> n;
-	vector<vector<int>> adj(n);
+	vector<vector<int> > adj(n);
 	cout << "Enter number of edges\n";
 	int e, u, v;
 	cin >> e;
@@ -60,6 +59,6 @@ int main()
 		cin >> u >> v;
 		adj[u-1].push_back(v-1);
 	}
-	cout << "Answer : " << longest_path(adj) + 1 << '\n';
+	cout << "Answer : " << longest_path(adj, n) + 1 << '\n';
 	return 0;
 }

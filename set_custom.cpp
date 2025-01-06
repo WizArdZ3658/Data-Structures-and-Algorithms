@@ -1,10 +1,13 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+#include <iostream>
+#include <set>
 using namespace std;
 #define SPEED ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 
-struct cmp 
+class myComparator
 {
-	bool operator() (const pair<int, int> &a, const pair<int, int> &b) const 
+	public:
+	int operator() (const pair<int, int> &a, const pair<int, int> &b)
 	{
 		if (a.first == b.first)
 		{
@@ -15,7 +18,7 @@ struct cmp
 };
 int main()
 {
-	set<pair<int, int>, cmp> segs;
+	set<pair<int, int>, myComparator> segs;
 	cout << "Enter number of values :- ";
 
 	int n;

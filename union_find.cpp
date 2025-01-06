@@ -7,12 +7,6 @@ int find_set(vector<int> &parent, int v)
     return parent[v] = find_set(parent, parent[v]);
 }
  
-void make_set(vector<int> &parent, vector<int> &siz, int v) 
-{
-    parent[v] = v;
-    siz[v] = 1;
-}
- 
 void union_sets(vector<int> &parent, vector<int> &siz, int a, int b) 
 {
     a = find_set(parent, a);
@@ -38,7 +32,8 @@ int main()
 
 	for (int i = 0; i < n+1; ++i)
 	{
-		make_set(parent, siz, i);
+		parent[v] = v;
+    	siz[v] = 1;
 	}
 
 	while(true)
