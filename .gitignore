@@ -1,3 +1,5 @@
 *.exe
 .vscode
 .idea
+*a.out*
+.DS_Store
